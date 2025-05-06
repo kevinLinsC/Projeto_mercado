@@ -1,10 +1,10 @@
-import React from 'react'
-
+// Importação components do bootstrap   
 import Navbar from "react-bootstrap/Navbar"
 import Container from "react-bootstrap/Container"
 import Nav from "react-bootstrap/Nav"
 import Button from "react-bootstrap/Button"
 
+// Importação do icone de mercado do react-icon
 import { BsShop } from "react-icons/bs"
 
 const BarraNavegacao = () => {
@@ -36,7 +36,8 @@ const BarraNavegacao = () => {
                             Usuário: Jarad Higgins           
                         </Navbar.Text>
 
-                        {/* Caso o usuário tenha feito login, aparece o botão de sair, se não, o botão de entrar */}
+                        {/* Caso o usuário tenha feito login, aparece o 
+                        botão de sair, se não, o botão de entrar */}
                         {
                             usuarioNome === "Visitante" ? (
                                 <>
