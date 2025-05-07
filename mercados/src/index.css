@@ -2,3 +2,12 @@
   background-color: rgb(231, 231, 231);
   height: 100%;
 }
+
+.error{
+  color: red;
+  font-size: 20px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  margin-top: 0.5%;
+}

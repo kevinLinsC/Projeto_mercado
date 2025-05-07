@@ -11,19 +11,21 @@ import Container from "react-bootstrap/Container"
 
 import BarraNavegacao from "./components/BarraNavegacao.jsx"
 
+import { AuthProvider } from "./contexts/UserContext.jsx"
+
 function App() {
   // const [count, setCount] = useState(0)
 
   return (
     <>
-      <div className="App">
-        <BarraNavegacao />
-        <Container>
-          <Outlet />
-        </Container>
-        
-      </div>
-      
+      <AuthProvider>
+        <div className="App">
+          <BarraNavegacao />
+          <Container>
+            <Outlet />
+          </Container>
+        </div>
+      </AuthProvider>
       {/* <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />

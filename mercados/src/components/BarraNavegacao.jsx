@@ -4,11 +4,14 @@ import Container from "react-bootstrap/Container"
 import Nav from "react-bootstrap/Nav"
 import Button from "react-bootstrap/Button"
 
+import { useContext } from "react"
+import { AuthContext } from "../contexts/UserContext"
+
 // Importação do icone de mercado do react-icon
 import { BsShop } from "react-icons/bs"
 
 const BarraNavegacao = () => {
-    const usuarioNome = "Visitante";
+    const { usuarioNome, logout } = useContext(AuthContext);
   return (
     <div>
         <Navbar expand='lg' bg='success' data-bs-theme='dark'>
@@ -47,7 +50,7 @@ const BarraNavegacao = () => {
                                 </>
                             ) : (
                                 <>
-                                    <Button variant='danger' href='/login'>Sair</Button>
+                                    <Button variant='danger' href='/login' onClick={logout}>Sair</Button>
                                 </>
                             )}
                     </Nav>

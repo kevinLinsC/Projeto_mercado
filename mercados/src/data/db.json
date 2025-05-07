@@ -1,0 +1,28 @@
+{
+    "usuarios": [
+        {
+            "id": "1",
+            "nome": "Jarad Higgins",
+            "email": "Jarad@gmail.com",
+            "senha": "999"
+        },
+        {
+            "id": "2",
+            "nome": "Juice WRLD",
+            "email": "JuiceWRLD@gmail.com",
+            "senha": "999ToGetIn"
+        },
+        {
+            "id": "3",
+            "nome": "Legends Never Die",
+            "email": "Legends@gmail.com",
+            "senha": "NeverDie"
+        }
+    ],
+    "produtos": [
+
+    ],
+    "caegorias": [
+
+    ]
+}
