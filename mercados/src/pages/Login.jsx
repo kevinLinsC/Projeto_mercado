@@ -7,13 +7,22 @@ import Alert from "react-bootstrap/Alert"
 
 // Importação do Hook form pra validar e enviar o formulário.
 import { useForm } from "react-hook-form"
-import { useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { useVerificaLogin } from "../hooks/useApi"
 import { useNavigate } from "react-router-dom"
 
 import { BsBoxArrowInRight } from "react-icons/bs"
 
+import { useContext } from "react"
+import { AuthContext } from "../contexts/UserContext"
+
 const Login = () => {
+  const { logout } = useContext(AuthContext)
+
+  useEffect(() => {
+    logout()
+  }, []);
+
   const { register, handleSubmit, formState: {errors}} = useForm();
 
   const { verificaLogin } = useVerificaLogin(); 

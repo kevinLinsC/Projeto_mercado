@@ -3,7 +3,16 @@ import CardProduto from '../components/CardProduto'
 
 import { useListaProdutos } from '../hooks/useApi'
 
+import { useContext } from 'react'
+import { AuthContext } from '../contexts/UserContext'
+import { Navigate } from "react-router-dom"
+
 const Home = () => {
+
+  const { usuarioNome } = useContext(AuthContext)
+  
+  if(usuarioNome === "Visitante") return <Navigate to="/login" />
+
   const produtos = useListaProdutos();
 
   return (
