@@ -12,8 +12,6 @@ import { useVerificaLogin } from "../hooks/useApi"
 import { useNavigate } from "react-router-dom"
 
 import { BsBoxArrowInRight } from "react-icons/bs"
-
-import { useContext } from "react"
 import { AuthContext } from "../contexts/UserContext"
 
 const Login = () => {

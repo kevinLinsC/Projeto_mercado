@@ -42,7 +42,7 @@ const CardProduto = (props) => {
             {props.categoria}
           </Card.Text>
 
-          <Card.Link href={`/editarproduto/${props.id}`}>
+          <Card.Link href={`/editar-Produto/${props.id}`}>
             <Button variant='warning'>Editar</Button>
           </Card.Link>
           <Card.Link>

@@ -70,3 +70,71 @@ export function useDeleteProduto() {
 
   return { deletarProduto}
 }
+
+export function useBuscarProdutoPorId() {
+  const BuscarProdutoPorId = async(idProduto) => {
+    const req = await fetch(`${url}/produtos/${idProduto}`);
+    const res = await req.json();
+    console.log("Produto encontrado: ", res);
+    return res;
+  };
+
+  return { BuscarProdutoPorId }
+}
+
+export function useListaCategorias() {
+  const [categorias, setCategorias] = useState();
+
+  useEffect(() => {
+    async function fetchData() {
+      try{
+        const req = await fetch(`${url}/categorias`);
+        const cate = await req.json();
+        console.log(cate);
+        setCategorias(cate);
+      }
+      catch (erro) {
+        console.log(erro.message);
+      }
+    }
+    fetchData();
+  }, [])
+
+  return categorias;
+}
+
+export function useInserirProduto() {
+  const inserirProduto = async(data) => {
+    const req = await fetch(`${url}/produtos`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data)
+    });
+    
+    const res = await req.json();
+    console.log("Produto inserido: ", res);
+    return res;
+  };
+
+  return { inserirProduto };
+}
+
+export function useAtualizaProduto() {
+  const atualizaProduto = async (data, idProduto) => {
+    const req = await fetch(`${url}/produtos/${idProduto}`, {
+      method: "PUT",
+      heades: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    const res = await req.json();
+    console.log("Produto atualizado: ", res);
+    return res;
+  };
+
+  return { atualizaProduto }
+}
